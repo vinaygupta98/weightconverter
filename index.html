@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weight converter</title>
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Weight converter</h1>
+       <form>
+         <div class="form-group">
+            <input id="lbs" class="form-control form-control-lg" type="number" placeholder="Grams........"> 
+         </div>
+         </form>
+            <div id="output">
+             <div class="card bg-primary mb-2 p-3">
+                 <div class="card-block">
+                    <h4>Kilograms:</h4>
+                    <div id="kilograms"></div>
+                 </div>               
+             </div>
+
+             <div class="card bg-success mb-2 p-3">
+                <div class="card-block">
+                   <h4>pounds:</h4>
+                   <div id="pounds"></div>
+                </div>               
+            </div>
+
+            <div class="card bg-danger mb-2 p-3">
+                <div class="card-block ">
+                   <h4>ounces:</h4>
+                   <div id="ounces"></div>
+                </div>               
+            </div>
+
+            <div class="card bg-warning mb-2 p-3">
+                <div class="card-block">
+                   <h4>tonnes:</h4>
+                   <div id="tonnes"></div>
+                </div>               
+            </div>
+  </div>
+    </div>
+    </div>                  
+        
+    <script>
+        document.getElementById('output').style.visibility = 'hidden';
+        document.getElementById('lbs').addEventListener('input',function(e){
+            document.getElementById('output').style.visibility = 'visible';
+ 
+            let lbsinput = e.target.value;
+        document.getElementById('kilograms').innerHTML= lbsinput/1000
+        document.getElementById('pounds').innerHTML= lbsinput/453.592
+        document.getElementById('ounces').innerHTML= lbsinput/28.3495
+        document.getElementById('tonnes').innerHTML= lbsinput/1e+6
+        
+        
+        })
+    </script>
+</body>
+</html>
